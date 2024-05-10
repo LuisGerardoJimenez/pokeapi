@@ -1,6 +1,7 @@
 package com.mx.pokeapi.business;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,10 +14,12 @@ import com.mx.pokeapi.dto.NameUrlDTO;
 import com.mx.pokeapi.dto.RecordsDTO;
 import com.mx.pokeapi.dto.ResultsDTO;
 import com.mx.pokeapi.dto.VersionDetailDTO;
+import com.mx.pokeapi.entity.RecordsEntity;
 import com.mx.pokeapi.feign.client.PokemonClient;
 import com.mx.pokeapi.feign.dto.DetailsResponse;
 import com.mx.pokeapi.feign.dto.RecordsResponse;
 import com.mx.pokeapi.interfaces.PokemonInterface;
+import com.mx.pokeapi.repository.RecordsRepository;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -26,6 +29,9 @@ public class PokemonBusiness implements PokemonInterface{
 	
 	@Autowired
 	private PokemonClient pokemonClient;
+	
+	@Autowired
+	private RecordsRepository recordsRepository;
 
 	@Override
 	public RecordsDTO getPokemons() {
@@ -45,6 +51,7 @@ public class PokemonBusiness implements PokemonInterface{
 		log.info("PokemonBusiness -> getPokemonByName");
 		DetailsResponse response = this.pokemonClient.getPokemonsByName(name);
 		log.info("Response-> "+response);
+		this.recordsRepository.save(new RecordsEntity(null, "127.0.0.1", new Date(), "M"));
 		ArrayList<HeldItemDTO> heldItemsDTO = null;
 		if(response.getHeldItems()!=null) {
 			heldItemsDTO = (ArrayList<HeldItemDTO>) response.getHeldItems().stream().map(h -> {

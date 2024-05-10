@@ -29,14 +29,14 @@ public class RecordsEntity implements Serializable {
 	@Column(name = "id", nullable = false)
 	private Long id;
 	
-	@Column(name = "ipOrigin", nullable = false)
+	@Column(name = "ip_origin", nullable = false)
 	private String ipOrigin;
 	
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "requestDate", nullable = false)
+	@Column(name = "request_date", nullable = false)
 	private Date requestDate;
 
-	@Column(name = "requestMethod", nullable = false)
+	@Column(name = "request_method", nullable = false)
 	private String requestMethod;
 	
 
