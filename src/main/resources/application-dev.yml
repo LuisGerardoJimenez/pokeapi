@@ -11,11 +11,25 @@ spring:
     url: jdbc:postgresql://localhost:5432/pokeapi
     username: postgres
     password: 12345
+    hikari:
+      connection-timeout: 20000
+      maximum-pool-size: 10
   jpa:
     show-sql: true
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
+        
+  cloud:
+    openfeign:
+      client:
+        config:
+          default:
+            connectTimeout: 5000
+            readTimeout: 5000
+            loggerLevel: basic
+      okhttp:
+        enabled: true
     
 logging:
   level:
@@ -23,22 +37,24 @@ logging:
       mx:
         pokeapi:
           feign:
-            client: DEBUG
+            client: debug
             
-
-feign:
-  client:
-    config:
-      default:
-        connectTimeout: 5000
-        readTimeout: 5000
-        --loggerLevel: basic
-        loggerLevel: full
+                        
+#feign:
+#  client:
+##    default-to-properties: false
+#    config:
+#      default:
+#        connectTimeout: 5000
+#        readTimeout: 5000
+#        loggerLevel: basic
+#  okhttp:
+#    enabled: true
         
         
 pokeapi:
   feign:
-    url: https://pokeapi.co/api/v2/pokemon
+    url: https://pokeapi.co/api/v2
 
 
 

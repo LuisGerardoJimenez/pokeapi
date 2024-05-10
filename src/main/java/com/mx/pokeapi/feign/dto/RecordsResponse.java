@@ -15,6 +15,6 @@ public class RecordsResponse implements Serializable{
 	private Long count;
 	private String next;
 	private String previous;
-	private ArrayList<ResultsResponse> results;
+	private ArrayList<NameUrlResponse> results;
 
 }

@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-public class ResultsResponse implements Serializable{
+public class NameUrlResponse implements Serializable{
 
 	private static final long serialVersionUID = -177499161645142857L;
 	
