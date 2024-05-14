@@ -7,13 +7,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import com.mx.pokeapi.feign.dto.DetailsResponse;
 import com.mx.pokeapi.feign.dto.RecordsResponse;
 
+import feign.Response;
+
 @FeignClient(name = "pokemonClient", url = "${pokeapi.feign.url}")
 public interface PokemonClient {
 	
 	@GetMapping("/pokemon")
-	RecordsResponse getPokemons();
+	Response getPokemons();
 	
 	@GetMapping("/pokemon/{name}")
-	DetailsResponse getPokemonsByName(@PathVariable(name = "name") String name);
+	Response getPokemonsByName(@PathVariable(name = "name") String name);
 
 }
