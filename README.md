@@ -77,11 +77,11 @@ La prueba necesita una autorización basica con el usuario definido en la propie
 - spring > security > user > name
 - spring > security > user > password
 
-![Postman Authorization](/src/main/resources/img/postman.jpg)
+![Postman Authorization](/src/main/resources/img/postman.JPG)
 
 Realizamos la peticion tipo **GET** y observamos la respuesta
 
-![Resultado Postman](/src/main/resources/img/resultado.jpg)
+![Resultado Postman](/src/main/resources/img/resultado.JPG)
 
 De la misma manera se pueden realizar pruebas directamente en la interfaz de usuario de **Swagger**
 
