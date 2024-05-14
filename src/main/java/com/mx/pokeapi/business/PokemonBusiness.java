@@ -40,7 +40,10 @@ public class PokemonBusiness implements PokemonInterface{
 	@Override
 	public RecordsDTO getPokemons(String urlOrigin, Date requestDate) throws PokeapiException {
 		try {
-			log.info("PokemonBusiness -> getPokemons");
+			log.info(this.getClass().getName()+" -> "+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName());
 			Response response = this.pokemonClient.getPokemons();
 			Gson gson  = new Gson();
 			RecordsResponse responseBody = gson.fromJson(response.body().asReader(StandardCharsets.UTF_8), RecordsResponse.class);
@@ -62,7 +65,10 @@ public class PokemonBusiness implements PokemonInterface{
 	@Override
 	public DetailsDTO getPokemonByName(String name, String urlOrigin, Date requestDate) throws PokeapiException {
 		try {
-			log.info("PokemonBusiness -> getPokemonByName");
+			log.info(this.getClass().getName()+" -> "+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName());
 			Response response = this.pokemonClient.getPokemonsByName(name);
 			ArrayList<HeldItemDTO> heldItemsDTO = null;
 			Gson gson  = new Gson();
@@ -91,7 +97,10 @@ public class PokemonBusiness implements PokemonInterface{
 	@Override
 	public ArrayList<AbilitiesDTO> getAbilitiesByPokemon(String name, String urlOrigin, Date requestDate) throws PokeapiException {
 		try {
-			log.info("PokemonBusiness -> getAbilitiesByPokemon"); 
+			log.info(this.getClass().getName()+" -> "+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName()); 
 			Response response = this.pokemonClient.getPokemonsByName(name);
 			Gson gson  = new Gson();
 			DetailsResponse responseBody = gson.fromJson(response.body().asReader(StandardCharsets.UTF_8), DetailsResponse.class);
@@ -109,7 +118,10 @@ public class PokemonBusiness implements PokemonInterface{
 	@Override
 	public Integer getBaseExperienceByPokemon(String name, String urlOrigin, Date requestDate) throws PokeapiException {
 		try {
-			log.info("PokemonBusiness -> getBaseExperienceByPokemon");
+			log.info(this.getClass().getName()+" -> "+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName());
 			Response response = this.pokemonClient.getPokemonsByName(name);
 			Gson gson  = new Gson();
 			DetailsResponse responseBody = gson.fromJson(response.body().asReader(StandardCharsets.UTF_8), DetailsResponse.class);
@@ -123,7 +135,10 @@ public class PokemonBusiness implements PokemonInterface{
 	@Override
 	public ArrayList<HeldItemDTO> getHeldItemsByPokemon(String name, String urlOrigin, Date requestDate) throws PokeapiException {
 		try {
-			log.info("PokemonBusiness -> getHeldItemsByPokemon");
+			log.info(this.getClass().getName()+" -> "+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName());
 			Response response = this.pokemonClient.getPokemonsByName(name);
 			ArrayList<HeldItemDTO> heldItemsDTO = null;
 			Gson gson  = new Gson();
@@ -144,7 +159,10 @@ public class PokemonBusiness implements PokemonInterface{
 	@Override
 	public Integer getIdByPokemon(String name, String urlOrigin, Date requestDate) throws PokeapiException {
 		try {
-			log.info("PokemonBusiness -> getIdByPokemon");
+			log.info(this.getClass().getName()+" -> "+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName());
 			Response response = this.pokemonClient.getPokemonsByName(name);
 			Gson gson  = new Gson();
 			DetailsResponse responseBody = gson.fromJson(response.body().asReader(StandardCharsets.UTF_8), DetailsResponse.class);
@@ -158,7 +176,10 @@ public class PokemonBusiness implements PokemonInterface{
 	@Override
 	public String getLocationAreaEncountersByPokemon(String name, String urlOrigin, Date requestDate) throws PokeapiException {
 		try {
-			log.info("PokemonBusiness -> getLocationAreaEncountersByPokemon");
+			log.info(this.getClass().getName()+" -> "+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName());
 			Response response = this.pokemonClient.getPokemonsByName(name);
 			Gson gson  = new Gson();
 			DetailsResponse responseBody = gson.fromJson(response.body().asReader(StandardCharsets.UTF_8), DetailsResponse.class);

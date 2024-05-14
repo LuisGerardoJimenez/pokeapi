@@ -10,10 +10,8 @@ public class CustomErrorHandler {
 	
 	@ExceptionHandler(Exception.class)
     public ResponseEntity<Exception> handleCustomErrorExceptions(Exception e) {
-        // casting the generic Exception e to CustomErrorException
 		if(e instanceof PokeapiException) {
 			PokeapiException customErrorException = (PokeapiException) e;
-//			HttpStatus status = HttpStatus.
 			return new ResponseEntity<>(
 	                new PokeapiException(
 	                		HttpStatus.INTERNAL_SERVER_ERROR.value(),
@@ -27,24 +25,6 @@ public class CustomErrorHandler {
 			return new ResponseEntity<>(e, HttpStatus.FORBIDDEN);
 		}
 		
-
-//        HttpStatus status = customErrorException.getStatus();
-
-        // converting the stack trace to String
-//        StringWriter stringWriter = new StringWriter();
-//        PrintWriter printWriter = new PrintWriter(stringWriter);
-//        customErrorException.printStackTrace(printWriter);
-//        String stackTrace = stringWriter.toString();
-
-//        return new ResponseEntity<>(
-//                new ErrorResponse(
-//                        status,
-//                        customErrorException.getMessage(),
-//                        stackTrace,
-//                        customErrorException.getData()
-//                ),
-//                status
-//        );
     }
 
 }

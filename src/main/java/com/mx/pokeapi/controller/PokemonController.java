@@ -49,13 +49,6 @@ public class PokemonController {
 		return this.pokemonBusiness.getPokemonByName(name, request.getRemoteAddr(), new Date());
 	}
 	
-//	@GetMapping(path = "/{name}", produces = "application/json")
-//	public DetailsDTO getPokemonsByName(@PathVariable(name = "name") String name) {
-//		ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
-//		log.info("Entrando a buscar el pokemon por Nombre -> "+name+" IP -> "+attributes.getRequest().getRemoteAddr());
-//		return this.pokemonBusiness.getPokemonByName(name);
-//	}
-	
 	@Operation(summary = "Search for Pokemon's abilities by Pokemon name")
 	@GetMapping(path = "/abilities/{name}", produces = "application/json")
 	public ArrayList<AbilitiesDTO> getPokemonsAbilitiesByPokemonName(HttpServletRequest request, @PathVariable(name = "name") String name) throws PokeapiException {
