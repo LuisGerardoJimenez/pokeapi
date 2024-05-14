@@ -39,5 +39,14 @@ public class RecordsEntity implements Serializable {
 	@Column(name = "request_method", nullable = false)
 	private String requestMethod;
 	
+	@Column(name = "request", nullable = false)
+	private String request;
+	
+	public RecordsEntity(String ipOrigin, Date requestDate, String requestMethod, String request) {
+		this.ipOrigin = ipOrigin;
+		this.requestDate = requestDate;
+		this.requestMethod = requestMethod;
+		this.request = request;
+	}
 
 }
